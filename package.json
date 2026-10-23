@@ -1,0 +1,19 @@
+{
+  "name": "g11",
+  "version": "1.0.0",
+  "description": "- Team 11",
+  "repository": {
+    "type": "git",
+    "url": "git@github.students.cs.ubc.ca:CPSC447-2025W-T2/g11.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "d3": "^6.2.0"
+  }
+}

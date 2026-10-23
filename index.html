@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>Student Performance Factors</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="icon" href="data:;base64,iVBORwOKGO=" />
+	<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+	<div class="container">
+		<h1>Student Performance Factors</h1>
+		<p class="description">Explore how study habits, lifestyle, family factors, and student characteristics relate to academic performance. Use the controls to switch attribute categories, select grade groups (top-right) to highlight students in the violin plots (top-left), and examine how patterns in the distributions and relationships connect to final grades.</p>
+		<div class="views-row">
+			<!-- View 2 Scatterplot -->
+			<div id="view2" class="view-panel"></div>
+			<!-- View 3 with title and legend -->
+			<div class="view3-container view-panel">
+				<div class="view-label">Student Profiles by Final Grade Quartile and Gender</div>
+				<div class="view3-inner">
+					<div id="view3"></div>
+					<div id="view3-legend"></div>
+				</div>
+			</div>
+		</div>
+
+		<!-- View 1 Parallel Coordinates -->
+		<div id="pc-view">
+			<div class="view-label view1">
+				Pathways Between Student Characteristics and Final Grade
+			</div>
+		</div>
+	</div>
+
+	<!-- D3 bundle -->
+	<script src="js/d3.v6.min.js"></script>
+
+	<!-- Our JS code -->
+	<script src="js/visualization.js"></script>
+	<script type="module" src="js/main.js"></script>
+	<script src="js/views/view3.js"></script>
+</body>
+</html>

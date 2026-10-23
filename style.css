@@ -1,0 +1,161 @@
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	overflow-x: hidden;
+	background: #fff;
+}
+
+h1 {
+	margin: 0 0 4px 0;
+	font-family: Arial, sans-serif;
+	font-size: clamp(1rem, 2vw, 1.7rem);
+	padding: 8px 12px 4px 12px;
+	color: #1a1a2e;
+}
+
+.description {
+	padding-left: 12px
+}
+
+.container {
+	width: 100%;
+	padding: 0 8px;
+}
+
+/* Two-column layout for view2 + view3 — always side-by-side */
+.views-row {
+	display: flex;
+	gap: clamp(4px, 0.6vw, 10px);
+	width: 100%;
+	align-items: flex-start;
+	margin-top: 8px;
+}
+
+.view-panel {
+	flex: 1 1 0;
+	min-width: 0;
+	overflow: hidden;
+}
+
+.view3-container {
+	margin-bottom: clamp(8px, 1.5vw, 20px);
+}
+
+.view3-inner {
+	display: flex;
+	flex-direction: column;
+}
+
+/* View labels / section headers */
+.view3-title,
+.view-label {
+	font-size: clamp(10px, 1vw, 15px);
+	padding: clamp(4px, 0.5vw, 7px) clamp(6px, 0.7vw, 10px);
+	background-color: #f5f5f5;
+	border-left: 4px solid #4CAF50;
+	border-radius: 0 4px 4px 0;
+	font-family: Arial, sans-serif;
+	font-weight: 700;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.view3-title .view3-label {
+	font-size: 24px;
+	font-weight: 800;
+	color: #2c3e50;
+	margin-right: 8px;
+}
+
+.view3-title .view3-description {
+	font-size: 16px;
+	font-weight: normal;
+	color: #333;
+}
+
+#view3-legend {
+	margin-top: clamp(4px, 0.6vw, 10px);
+}
+
+/* View 1 (Parallel Coordinates) label — offset matches the fixed sidebar */
+.view1 {
+	margin-bottom: 0;
+	margin-top: clamp(10px, 1.4vw, 25px);
+	margin-left: 160px;
+}
+
+/* Let all SVGs scale down when their container is narrower than their drawn width */
+svg {
+	max-width: 100%;
+}
+
+/* Chernoff face interaction */
+.faceTouchArea {
+	fill: transparent;
+	cursor: pointer;
+}
+
+.faceTouchArea:hover {
+	fill: rgba(0, 0, 0, 0.05);
+	stroke: #555;
+	stroke-width: 0.5px;
+}
+
+.faceTouchArea.selectedFace {
+	stroke: #333;
+	stroke-width: 2px;
+	fill: none;
+}
+
+.chernoff-face.face-selected:hover {
+	filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.45));
+}
+
+#view2 {
+	margin-top: 0 !important;
+}
+
+#controls {
+	background-color: #c0c0c0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 100;
+}
+
+/* ---- Media query tweaks ------------------------------------------ */
+/* On very wide screens give a bit more breathing room */
+@media (min-width: 1600px) {
+	.view-label, .view3-title {
+		font-size: 15px;
+	}
+
+	h1 {
+		font-size: 1.7rem;
+	}
+}
+
+/* On screens narrower than ~900 px keep things readable */
+@media (max-width: 900px) {
+	.view1 {
+		margin-left: 155px;
+	}
+
+	h1 {
+		font-size: 1rem;
+		padding: 6px 8px 2px 8px;
+	}
+
+	.view-label, .view3-title {
+		font-size: 10px;
+	}
+}
